@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Login Form -->
+    <div class="container mt-5" id="login-form">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Login</h2>
+                <form id="login">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <div id="login-message" class="mt-2 text-center text-danger"></div>
+                </form>
+                <div class="text-center mt-4">
+                    <a href="#" id="show-signup-form">Don't have an account? Sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="container mt-5 d-none" id="signup-form">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Sign Up</h2>
+                <form id="signup">
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" class="form-control" required>
+                            <option value="LIBRARIAN">Librarian</option>
+                            <option value="MEMBER">Member</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+                    <div id="signup-message" class="mt-2 text-center text-danger"></div>
+                </form>
+                <div class="text-center mt-4">
+                    <a href="#" id="show-login-form">Already have an account? Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Librarian Dashboard -->
+    <div class="container mt-5 d-none" id="librarian-dashboard">
+        <h2 class="text-center">Librarian Dashboard</h2>
+        <button class="btn btn-danger float-right" id="logout-btn">Logout</button>
+        <div id="librarian-actions">
+            <h3>Add, Update, or Remove Books</h3>
+            <div class="form-group">
+                <label for="book-title">Book Title</label>
+                <input type="text" id="book-title" class="form-control">
+            </div>
+            <button class="btn btn-primary" id="add-book-btn">Add Book</button>
+            <button class="btn btn-warning" id="update-book-btn">Update Book</button>
+            <button class="btn btn-danger" id="remove-book-btn">Remove Book</button>
+
+            <h3 class="mt-4">Manage Members</h3>
+            <button class="btn btn-secondary" id="view-members-btn">View All Members</button>
+        </div>
+
+        <div id="members-list" class="mt-4"></div>
+    </div>
+
+    <!-- Member Dashboard -->
+    <div class="container mt-5 d-none" id="member-dashboard">
+        <h2 class="text-center">Member Dashboard</h2>
+        <button class="btn btn-danger float-right" id="logout-btn-member">Logout</button>
+        <div id="member-actions">
+            <h3>Borrow and Return Books</h3>
+            <button class="btn btn-primary" id="borrow-book-btn">Borrow Book</button>
+            <button class="btn btn-secondary" id="return-book-btn">Return Book</button>
+            <h3 class="mt-4">View Borrow History</h3>
+            <button class="btn btn-info" id="view-history-btn">View History</button>
+        </div>
+
+        <div id="history-list" class="mt-4"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/books.js"></script>
+    <script src="js/members.js"></script>
+    <script src="js/utils.js"></script>
+</body>
+</html>

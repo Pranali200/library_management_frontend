@@ -1,0 +1,9 @@
+/* Center login form */
+#login-form {
+    margin-top: 100px;
+}
+
+/* Dashboard padding */
+#librarian-dashboard, #member-dashboard {
+    margin-top: 30px;
+}
